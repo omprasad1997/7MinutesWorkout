@@ -13,6 +13,7 @@ object Constants {
             false
         )
 
+        exerciseList.add(jumpingJacks)
         val wallSit = ExerciseModel(2, "Wall Sit", R.drawable.ic_wall_sit, false, false)
         exerciseList.add(wallSit)
 

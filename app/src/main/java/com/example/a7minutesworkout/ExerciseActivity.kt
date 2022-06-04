@@ -10,6 +10,7 @@ import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a7minutesworkout.databinding.ActivityExcerciseBinding
 import java.lang.Exception
 import java.util.*
@@ -29,6 +30,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var currentExercisePosition = -1
     private var tts: TextToSpeech? = null // Variable for TextToSpeech
     private var player: MediaPlayer? = null
+    private var exerciseStatusAdapter: ExerciseStatusAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +57,14 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         tts = TextToSpeech(this, this)
         setupRestView()
+        setUpExerciseStatusRecyclerView()
+    }
+
+    private fun setUpExerciseStatusRecyclerView(){
+        binding?.rvExerciseStatus?.layoutManager  =
+            LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        exerciseStatusAdapter = ExerciseStatusAdapter(exerciseList!!)
+        binding?.rvExerciseStatus?.adapter = exerciseStatusAdapter
     }
 
     private fun setupRestView() {
@@ -96,6 +106,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             override fun onFinish() {
                 currentExercisePosition++
+                exerciseList!![currentExercisePosition].isSelected = true
+                exerciseStatusAdapter?.notifyDataSetChanged()
                 setUpExerciseView()
             }
         }.start()
@@ -131,6 +143,11 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
 
             override fun onFinish() {
+
+                exerciseList!![currentExercisePosition].isSelected = false
+                exerciseList!![currentExercisePosition].isCompleted = true
+                exerciseStatusAdapter?.notifyDataSetChanged()
+
                 if (currentExercisePosition < exerciseList!!.size - 1) {
                     setupRestView()
                 } else {
@@ -185,7 +202,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         // TODO (Step 4 - When the activity is destroyed if the media player instance is not null then stop it.)
         // START
-        if(player != null){
+        if (player != null) {
             player!!.stop()
         }
 

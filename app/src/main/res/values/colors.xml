@@ -14,4 +14,5 @@
     <color name="lightGrey">#C4C4C4</color>
 
     <color name="toolbar_color_control_normal">#FF000000</color>
+    <color name="rv_item_selected_color">#212121</color>
 </resources>
