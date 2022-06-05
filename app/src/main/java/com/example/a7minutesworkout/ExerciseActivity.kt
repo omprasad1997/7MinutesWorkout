@@ -3,21 +3,16 @@ package com.example.a7minutesworkout
 import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.provider.MediaStore
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a7minutesworkout.databinding.ActivityExcerciseBinding
 import com.example.a7minutesworkout.databinding.DialogCustomBackConfirmationBinding
-import java.lang.Exception
 import java.util.*
-import kotlin.collections.ArrayList
 
 class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     // 1 create a binding variable
@@ -75,8 +70,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
     private fun customDialogForBackButton(){
-        var customDialog = Dialog(this)
-        var dialogBinding = DialogCustomBackConfirmationBinding.inflate(layoutInflater)
+        val customDialog = Dialog(this)
+        val dialogBinding = DialogCustomBackConfirmationBinding.inflate(layoutInflater)
         customDialog.setContentView(dialogBinding.root)
         customDialog.setCanceledOnTouchOutside(false)
         dialogBinding.btnYes.setOnClickListener {
@@ -93,8 +88,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private fun setupRestView() {
         try {
-            var songURI =
-                Uri.parse("android:resource://com.example.a7minutesworkout/" + R.raw.press_start) //not working so you can direct use music like below
+//            var songURI =
+//                Uri.parse("android:resource://com.example.a7minutesworkout/" + R.raw.press_start) //not working so you can direct use music like below
             player = MediaPlayer.create(applicationContext, R.raw.press_start)
             player?.isLooping = false // Sets the player to be looping or non-looping.
             player?.start() // Starts Playback.
