@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/7MinutesWorkout/app/src/main/res/drawable/circular_progress_bar.xml" value="0.2265" />
         <entry key="..\:/7MinutesWorkout/app/src/main/res/drawable/circular_progress_gray.xml" value="0.2265" />
+        <entry key="..\:/7MinutesWorkout/app/src/main/res/drawable/drawable_radio_group_tab_background.xml" value="0.1975" />
+        <entry key="..\:/7MinutesWorkout/app/src/main/res/drawable/drawable_units_tab_selector.xml" value="0.1975" />
+        <entry key="..\:/7MinutesWorkout/app/src/main/res/drawable/drawable_units_tab_text_color_selector.xml" value="0.1975" />
         <entry key="..\:/7MinutesWorkout/app/src/main/res/drawable/ic_action_done.xml" value="0.2295" />
         <entry key="..\:/7MinutesWorkout/app/src/main/res/drawable/item_circular_color_accent_background.xml" value="0.2265" />
         <entry key="..\:/7MinutesWorkout/app/src/main/res/drawable/item_circular_color_accent_border.xml" value="0.205" />
