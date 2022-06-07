@@ -96,6 +96,7 @@
         app:boxStrokeColor="@color/colorAccent"
         app:hintTextColor="@color/colorAccent"
         android:layout_below="@id/rgUnits"
+        android:visibility="gone"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -104,7 +105,7 @@
             android:id="@+id/etUsMetricUnitWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="WEIGHT (in kg)"
+            android:hint="WEIGHT (in pounds)"
             android:inputType="numberDecimal"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
