@@ -1,9 +1,11 @@
 package com.example.a7minutesworkout.activities
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
+import com.example.a7minutesworkout.R
 import com.example.a7minutesworkout.database.HistoryDao
 import com.example.a7minutesworkout.WorkoutApp
 import com.example.a7minutesworkout.database.HistoryEntity
@@ -15,6 +17,7 @@ import java.util.*
 class FinishActivity : AppCompatActivity() {
 
     private var binding:ActivityFinishBinding? = null
+    private var player : MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +35,27 @@ class FinishActivity : AppCompatActivity() {
         }
 
         binding?.btnFinish?.setOnClickListener {
+            player?.stop()
             finish()
         }
 
+        playWorkoutFinishedMusic()
+
         val dao = (application as WorkoutApp).db.historyDao()
         addDateToDatabase(dao)
+    }
+
+    private fun playWorkoutFinishedMusic() {
+
+        try {
+            player = MediaPlayer.create(applicationContext, R.raw.finished_workout)
+            player?.isLooping = false
+            player?.start()
+
+        } catch (e : Exception){
+            e.printStackTrace()
+        }
+
     }
 
     private fun addDateToDatabase(historyDao: HistoryDao){
@@ -52,6 +71,16 @@ class FinishActivity : AppCompatActivity() {
             historyDao.insert(HistoryEntity(date))
             Log.e("Date:","Added...")
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        if(player != null){
+            player = null
+        }
+
+        binding = null
     }
 }
 
