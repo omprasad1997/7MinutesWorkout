@@ -1,5 +1,7 @@
 package com.example.a7minutesworkout
 
+import com.example.a7minutesworkout.model.ExerciseModel
+
 object Constants {
 
     fun defaultExerciseList(): ArrayList<ExerciseModel> {

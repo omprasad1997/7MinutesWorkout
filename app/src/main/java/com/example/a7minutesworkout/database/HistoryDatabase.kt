@@ -1,4 +1,4 @@
-package com.example.a7minutesworkout
+package com.example.a7minutesworkout.database
 
 import android.content.Context
 import androidx.room.Database
@@ -13,7 +13,7 @@ abstract class HistoryDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: HistoryDatabase? = null
 
-        fun getInstance(context: Context) : HistoryDatabase{
+        fun getInstance(context: Context) : HistoryDatabase {
             synchronized(this){
                 var instance = INSTANCE
 

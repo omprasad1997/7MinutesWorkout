@@ -1,4 +1,4 @@
-package com.example.a7minutesworkout
+package com.example.a7minutesworkout.model
 
 data class ExerciseModel(
     var id:Int,

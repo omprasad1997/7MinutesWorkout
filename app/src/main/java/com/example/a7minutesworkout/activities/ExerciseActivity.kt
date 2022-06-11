@@ -1,4 +1,4 @@
-package com.example.a7minutesworkout
+package com.example.a7minutesworkout.activities
 
 import android.app.Dialog
 import android.content.Intent
@@ -10,6 +10,10 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.a7minutesworkout.Constants
+import com.example.a7minutesworkout.model.ExerciseModel
+import com.example.a7minutesworkout.adapter.ExerciseStatusAdapter
+import com.example.a7minutesworkout.R
 import com.example.a7minutesworkout.databinding.ActivityExcerciseBinding
 import com.example.a7minutesworkout.databinding.DialogCustomBackConfirmationBinding
 import java.util.*

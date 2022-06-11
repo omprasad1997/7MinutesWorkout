@@ -1,11 +1,8 @@
-package com.example.a7minutesworkout
+package com.example.a7minutesworkout.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.CountDownTimer
-import android.widget.FrameLayout
-import android.widget.Toast
 import com.example.a7minutesworkout.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

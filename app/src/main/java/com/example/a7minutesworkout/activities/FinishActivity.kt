@@ -1,10 +1,12 @@
-package com.example.a7minutesworkout
+package com.example.a7minutesworkout.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
-import com.example.a7minutesworkout.databinding.ActivityExcerciseBinding
+import com.example.a7minutesworkout.database.HistoryDao
+import com.example.a7minutesworkout.WorkoutApp
+import com.example.a7minutesworkout.database.HistoryEntity
 import com.example.a7minutesworkout.databinding.ActivityFinishBinding
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
