@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
+import com.example.a7minutesworkout.Constants
 import com.example.a7minutesworkout.R
 import com.example.a7minutesworkout.database.HistoryDao
 import com.example.a7minutesworkout.WorkoutApp
@@ -24,7 +25,7 @@ class FinishActivity : AppCompatActivity() {
 
         binding = ActivityFinishBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-
+        Constants.getFullScreenActivity(window)
         setSupportActionBar(binding?.toolbarFinishActivity)
         if(supportActionBar != null){
             supportActionBar?.setDisplayHomeAsUpEnabled(true)

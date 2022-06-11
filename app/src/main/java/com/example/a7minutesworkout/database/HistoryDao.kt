@@ -1,6 +1,7 @@
 package com.example.a7minutesworkout.database
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
@@ -11,6 +12,12 @@ interface HistoryDao {
     @Insert
     suspend fun insert(historyEntity: HistoryEntity)
 
+    @Delete
+    suspend fun deleteExerciseByDate(historyEntity: HistoryEntity)
+
     @Query("SELECT * FROM `history-table`")
     fun fetchAllDates() : Flow<List<HistoryEntity>>
+
+
+
 }

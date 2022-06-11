@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.a7minutesworkout.Constants
 import com.example.a7minutesworkout.R
 import com.example.a7minutesworkout.databinding.ActivityBmiBinding
 import java.math.BigDecimal
@@ -25,7 +26,7 @@ class BMIActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityBmiBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-
+        Constants.getFullScreenActivity(window)
         setSupportActionBar(binding?.toolbarBmiActivity)
 
         if (supportActionBar != null) {

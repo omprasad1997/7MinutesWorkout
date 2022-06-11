@@ -1,8 +1,16 @@
 package com.example.a7minutesworkout
 
+import android.view.Window
+import android.view.WindowManager
 import com.example.a7minutesworkout.model.ExerciseModel
 
 object Constants {
+
+    fun getFullScreenActivity(window: Window) {
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+    }
 
     fun defaultExerciseList(): ArrayList<ExerciseModel> {
         var exerciseList = ArrayList<ExerciseModel>()

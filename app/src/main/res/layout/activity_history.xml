@@ -7,14 +7,23 @@
     tools:context=".activities.HistoryActivity">
 
     <androidx.appcompat.widget.Toolbar
-        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/toolbar_history_activity"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="#FFFFFF" />
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivClearAllDates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:visibility="gone"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_clear_all" />
+    </androidx.appcompat.widget.Toolbar>
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/toolbar_history_activity"
         android:id="@+id/tvHistory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,20 +32,20 @@
         android:text="EXERCISE COMPLETED"
         android:textSize="18sp"
         android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_history_activity"
         tools:visibility="visible" />
 
     <androidx.recyclerview.widget.RecyclerView
-        app:layout_constraintTop_toBottomOf="@id/tvHistory"
         android:id="@+id/rvHistory"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHistory"
         tools:visibility="visible" />
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/toolbar_history_activity"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/tvNoDataAvailable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,6 +54,19 @@
         android:textColor="#212121"
         android:textSize="18sp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_history_activity"
         tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_history_activity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

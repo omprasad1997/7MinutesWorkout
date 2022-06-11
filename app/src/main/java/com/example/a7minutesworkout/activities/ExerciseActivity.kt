@@ -41,6 +41,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         // 3 pass in binding?.root in the content view
         setContentView(binding?.root)
+        Constants.getFullScreenActivity(window)
 
         // 4: then set support action bar and get toolBarExerciser using the binding
         //variable
